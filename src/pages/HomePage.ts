@@ -12,8 +12,9 @@ export class HomePage extends BasePage {
 
     async navigateToInstructorPanel(){
         await this.basePageClickElement(this.page.locator('xpath=//button//span[text()="Menu"]'));
-        await this.basePageClickElement(this.page.locator('xpath=//a[contains(.,"Instructor Panel")]'));
+        await this.basePageClickElement(this.page.locator('xpath=//span[contains(.,"Instructor Panel")]').first());
     }
+
 }
 
 
