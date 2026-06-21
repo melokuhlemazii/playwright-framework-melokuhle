@@ -2,13 +2,13 @@ export const validUsers = {
     admin: {
         username: 'admin@gmail.com',
         password: '@12345678',
-        name: 'Nkosi'
+        gitUsername: 'https://github.com/git123'
     },
 
     classUsers: {
         username: 'melomazibuko8@gmail.com',
         password: 'Mwelase@1031',
-        name: 'Melokuhle'
+        gitUsername: 'https://github.com/melokuhlemazii'
     }
 }
 

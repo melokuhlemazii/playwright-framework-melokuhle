@@ -15,6 +15,11 @@ export class HomePage extends BasePage {
         await this.basePageClickElement(this.page.locator('xpath=//span[contains(.,"Instructor Panel")]').first());
     }
 
+    async navigateToUserProfile(){
+        await this.basePageClickElement(this.page.locator('xpath=//button//span[text()="Menu"]'));
+        await this.basePageClickElement(this.page.locator('xpath=//span[contains(.,"My Profile")]').first());
+    }
+
 }
 
 

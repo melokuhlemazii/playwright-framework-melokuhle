@@ -15,12 +15,16 @@ export class LoginPage extends BasePage {
     async userLogin(username: string, password: string) {
         
         await this.basePageEnterText(this.page.locator('#login-email'), username);
-
         await this.basePageEnterText(this.page.locator('#login-password'), password);
-
         //await this.basePageClickElement(this.page.locator('xpath=//button[contains(.,"Login")]'));
         await this.basePageClickElement(this.page.getByRole('button', { name: 'Login' }));
         
+    }
+
+    async performFullLogin(username: string, password: string) {
+        await this.basePageGoToUrl('https://ndosisimplifiedautomation.vercel.app/');
+        await this.navigateToLoginPage();
+        await this.userLogin(username, password);
     }
 }
 
