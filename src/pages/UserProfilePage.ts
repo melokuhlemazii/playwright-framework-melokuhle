@@ -6,7 +6,7 @@ export class UserProfilePage extends BasePage {
 
     async editUserProfile(gitUsername: string ) {
         await this.basePageClickElement(this.page.locator('css = button:has-text("Edit Profile")'));
-        await this.basePageEnterText(this.page.getByPlaceholder('e.g.,octocat'), gitUsername);
+        await this.basePageEnterText(this.page.getByPlaceholder('e.g., octocat'), gitUsername);
         await this.basePageClickElement(this.page.locator('css = button:has-text("Save Changes")'));
     }
 
