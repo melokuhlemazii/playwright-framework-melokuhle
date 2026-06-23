@@ -3,7 +3,7 @@ import {BasePage} from './BasePage';
 
 export class HomePage extends BasePage {
     get verifyHomePageHeading(): Locator {
-        return this.page.getByRole('heading', { name: /Welcome\s*back/i }); //regex for case insensitive match and to ignore extra spaces
+        return this.page.locator("xpath=//span[normalize-space()='Welcome']");
     }
 
     async verifyHomePageIsDisplayed(){

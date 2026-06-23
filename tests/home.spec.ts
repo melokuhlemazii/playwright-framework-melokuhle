@@ -11,11 +11,11 @@ test.describe('Instructor Panel Functionality', () => {
         await homePage.navigateToInstructorPanel();
     });
 
-    test.only('Update User Profile', async ({ loginPage, homePage, userProfilePage}) => {
+    test('Update User Profile', async ({ loginPage, homePage, userProfilePage}) => {
         //await loginPage.basePageGoToUrl('https://ndosisimplifiedautomation.vercel.app/');
         //await loginPage.navigateToLoginPage();
         //await loginPage.userLogin(validUsers.admin.username, validUsers.admin.password);
-        await loginPage.performFullLogin(validUsers.classUsers.username, validUsers.classUsers.password);
+        await loginPage.performFullLogin(validUsers.admin.username, validUsers.admin.password);
         await homePage.verifyHomePageIsDisplayed();
         await homePage.navigateToUserProfile();
         await userProfilePage.editUserProfile('validUsers.admin.gitUsername');

@@ -26,7 +26,16 @@ export class BasePage {
 
     //get the text value of an element
     async basePageGetTextValue(locator: Locator): Promise<string> {
-        return await locator.inputValue();
+        // If the locator targets an <input>, <textarea> or <select>, return its value;
+        // otherwise return the element's text content trimmed.
+        const result = await locator.evaluate((el: Element) => {
+            // input/textarea/select have a `value` property
+            if (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement || el instanceof HTMLSelectElement) {
+                return (el as HTMLInputElement).value;
+            }
+            return el.textContent;
+        });
+        return result ? String(result).trim() : '';
     }
 
     //verify that an element is visible on the page

@@ -13,8 +13,8 @@ export class UserProfilePage extends BasePage {
     async verifyUserProfileUpdated(gitUsername: string) {
         const actualGitUsername = await this.basePageGetTextValue(this.page.locator('xpath = //*[@id="app-main-content"]/section/div/div[1]/div[5]/div[2]/div/a'));
         console.log('Actual Git Username:', actualGitUsername);
-        if(actualGitUsername !== gitUsername) {
-            console.log('Git username incorrect, expected: ${gitUsername}');
+        if (actualGitUsername !== gitUsername) {
+            console.log(`Git username incorrect, expected: ${gitUsername}`);
         }
     }
 }
